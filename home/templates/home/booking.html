@@ -1,0 +1,72 @@
+{% load static %}
+<style>
+    .inputs{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    .inputs input{
+        padding: 10px;
+        width: 100%;
+        background-color: rgb(237, 225, 225);
+        border: none;
+    }
+    .inputs textarea{
+        padding: 10px;
+        width: 100%;
+        background-color: rgb(237, 225, 225);
+    }
+    .inputs input[type='submit']{
+        background-color: darkblue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+    .inputs input[type='submit']:hover{
+        background-color: rgb(48, 48, 199);
+    }
+</style>
+{% block title %}Appointment{% endblock title %}
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<div class="auto-container">
+<div class="title-outer">
+<h1>Appointment</h1>
+<ul class="page-breadcrumb">
+<li><a href="index-2.html">Home</a></li>
+<li>Appointment</li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<section class="contact-section" id="contact">
+<div class="small-container">
+<div class="sec-title text-center">
+<span class="sub-title">We are available 24 x 7</span>
+<h2>Appointment</h2>
+<span class="divider"></span>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <div class="inputs">
+        <label">DateTime</label><br>
+        <input type="datetime-local" name="checkin_dtime">
+    </div>
+    <div class="inputs">
+        <label">DateTime</label><br>
+        <input type="datetime-local" name="checkout_dtime">
+    </div>
+  
+    <div class="inputs">
+       <input type="submit" class="btn" name="submit" value="Submit">
+    </div>
+</form>
+
+
+<br>
+</div>
+</section>
+
